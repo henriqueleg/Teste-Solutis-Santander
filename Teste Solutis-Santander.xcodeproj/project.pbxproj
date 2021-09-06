@@ -3,19 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A3E57522D990CB812E9A499 /* Pods_Teste_Solutis_Santander.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89A3287C07C815C752020CB /* Pods_Teste_Solutis_Santander.framework */; };
 		BA935A4726E685ED00B1E904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A4626E685ED00B1E904 /* AppDelegate.swift */; };
 		BA935A4926E685ED00B1E904 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A4826E685ED00B1E904 /* SceneDelegate.swift */; };
 		BA935A4B26E685ED00B1E904 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A4A26E685ED00B1E904 /* ViewController.swift */; };
 		BA935A4E26E685ED00B1E904 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA935A4C26E685ED00B1E904 /* Main.storyboard */; };
 		BA935A5026E685F400B1E904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA935A4F26E685F400B1E904 /* Assets.xcassets */; };
 		BA935A5326E685F400B1E904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA935A5126E685F400B1E904 /* LaunchScreen.storyboard */; };
+		BA935A5E26E68E0800B1E904 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A5D26E68E0800B1E904 /* Login.swift */; };
+		BA935A6026E6926800B1E904 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A5F26E6926800B1E904 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A89A3287C07C815C752020CB /* Pods_Teste_Solutis_Santander.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_Solutis_Santander.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA935A4326E685ED00B1E904 /* Teste Solutis-Santander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Teste Solutis-Santander.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA935A4626E685ED00B1E904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA935A4826E685ED00B1E904 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,10 @@
 		BA935A4F26E685F400B1E904 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA935A5226E685F400B1E904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA935A5426E685F400B1E904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA935A5D26E68E0800B1E904 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		BA935A5F26E6926800B1E904 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D39EB25E910DD9FA2BD1F133 /* Pods-Teste Solutis-Santander.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste Solutis-Santander.debug.xcconfig"; path = "Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander.debug.xcconfig"; sourceTree = "<group>"; };
+		E5D9A72E350C5984211333B7 /* Pods-Teste Solutis-Santander.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste Solutis-Santander.release.xcconfig"; path = "Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A3E57522D990CB812E9A499 /* Pods_Teste_Solutis_Santander.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		409BD76C5D6FDE3D145FC94B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A89A3287C07C815C752020CB /* Pods_Teste_Solutis_Santander.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		741305A65EADCDEA25914A35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D39EB25E910DD9FA2BD1F133 /* Pods-Teste Solutis-Santander.debug.xcconfig */,
+				E5D9A72E350C5984211333B7 /* Pods-Teste Solutis-Santander.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BA935A3A26E685ED00B1E904 = {
 			isa = PBXGroup;
 			children = (
 				BA935A4526E685ED00B1E904 /* Teste Solutis-Santander */,
 				BA935A4426E685ED00B1E904 /* Products */,
+				741305A65EADCDEA25914A35 /* Pods */,
+				409BD76C5D6FDE3D145FC94B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +98,8 @@
 		BA935A5A26E6861400B1E904 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BA935A5D26E68E0800B1E904 /* Login.swift */,
+				BA935A5F26E6926800B1E904 /* API.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA935A5726E685F400B1E904 /* Build configuration list for PBXNativeTarget "Teste Solutis-Santander" */;
 			buildPhases = (
+				A139E5BA87648FAA2FEFCA60 /* [CP] Check Pods Manifest.lock */,
 				BA935A3F26E685ED00B1E904 /* Sources */,
 				BA935A4026E685ED00B1E904 /* Frameworks */,
 				BA935A4126E685ED00B1E904 /* Resources */,
+				133A60D7B0B692F6D6DD74E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +188,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		133A60D7B0B692F6D6DD74E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A139E5BA87648FAA2FEFCA60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Teste Solutis-Santander-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA935A3F26E685ED00B1E904 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -164,6 +238,8 @@
 				BA935A4B26E685ED00B1E904 /* ViewController.swift in Sources */,
 				BA935A4726E685ED00B1E904 /* AppDelegate.swift in Sources */,
 				BA935A4926E685ED00B1E904 /* SceneDelegate.swift in Sources */,
+				BA935A5E26E68E0800B1E904 /* Login.swift in Sources */,
+				BA935A6026E6926800B1E904 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +383,7 @@
 		};
 		BA935A5826E685F400B1E904 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D39EB25E910DD9FA2BD1F133 /* Pods-Teste Solutis-Santander.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -325,6 +402,7 @@
 		};
 		BA935A5926E685F400B1E904 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5D9A72E350C5984211333B7 /* Pods-Teste Solutis-Santander.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
