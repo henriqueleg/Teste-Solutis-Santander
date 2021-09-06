@@ -56,15 +56,39 @@
 		BA935A4526E685ED00B1E904 /* Teste Solutis-Santander */ = {
 			isa = PBXGroup;
 			children = (
+				BA935A5A26E6861400B1E904 /* Model */,
+				BA935A5B26E6861E00B1E904 /* View */,
+				BA935A5C26E6862600B1E904 /* Controller */,
 				BA935A4626E685ED00B1E904 /* AppDelegate.swift */,
 				BA935A4826E685ED00B1E904 /* SceneDelegate.swift */,
-				BA935A4A26E685ED00B1E904 /* ViewController.swift */,
-				BA935A4C26E685ED00B1E904 /* Main.storyboard */,
 				BA935A4F26E685F400B1E904 /* Assets.xcassets */,
-				BA935A5126E685F400B1E904 /* LaunchScreen.storyboard */,
 				BA935A5426E685F400B1E904 /* Info.plist */,
 			);
 			path = "Teste Solutis-Santander";
+			sourceTree = "<group>";
+		};
+		BA935A5A26E6861400B1E904 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA935A5B26E6861E00B1E904 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA935A5126E685F400B1E904 /* LaunchScreen.storyboard */,
+				BA935A4C26E685ED00B1E904 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA935A5C26E6862600B1E904 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA935A4A26E685ED00B1E904 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
