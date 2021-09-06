@@ -16,6 +16,7 @@
 		BA935A5326E685F400B1E904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA935A5126E685F400B1E904 /* LaunchScreen.storyboard */; };
 		BA935A5E26E68E0800B1E904 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A5D26E68E0800B1E904 /* Login.swift */; };
 		BA935A6026E6926800B1E904 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A5F26E6926800B1E904 /* API.swift */; };
+		BA935A6226E6A63900B1E904 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A6126E6A63900B1E904 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BA935A5426E685F400B1E904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA935A5D26E68E0800B1E904 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		BA935A5F26E6926800B1E904 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		BA935A6126E6A63900B1E904 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D39EB25E910DD9FA2BD1F133 /* Pods-Teste Solutis-Santander.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste Solutis-Santander.debug.xcconfig"; path = "Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander.debug.xcconfig"; sourceTree = "<group>"; };
 		E5D9A72E350C5984211333B7 /* Pods-Teste Solutis-Santander.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste Solutis-Santander.release.xcconfig"; path = "Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 		BA935A4526E685ED00B1E904 /* Teste Solutis-Santander */ = {
 			isa = PBXGroup;
 			children = (
+				BA935A6326E6C82800B1E904 /* Servicos */,
 				BA935A5A26E6861400B1E904 /* Model */,
 				BA935A5B26E6861E00B1E904 /* View */,
 				BA935A5C26E6862600B1E904 /* Controller */,
@@ -99,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				BA935A5D26E68E0800B1E904 /* Login.swift */,
-				BA935A5F26E6926800B1E904 /* API.swift */,
+				BA935A6126E6A63900B1E904 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +122,14 @@
 				BA935A4A26E685ED00B1E904 /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA935A6326E6C82800B1E904 /* Servicos */ = {
+			isa = PBXGroup;
+			children = (
+				BA935A5F26E6926800B1E904 /* API.swift */,
+			);
+			path = Servicos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +248,7 @@
 			files = (
 				BA935A4B26E685ED00B1E904 /* ViewController.swift in Sources */,
 				BA935A4726E685ED00B1E904 /* AppDelegate.swift in Sources */,
+				BA935A6226E6A63900B1E904 /* User.swift in Sources */,
 				BA935A4926E685ED00B1E904 /* SceneDelegate.swift in Sources */,
 				BA935A5E26E68E0800B1E904 /* Login.swift in Sources */,
 				BA935A6026E6926800B1E904 /* API.swift in Sources */,
