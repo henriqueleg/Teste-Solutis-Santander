@@ -9,45 +9,33 @@ import UIKit
 import Alamofire
 
 class API: NSObject {
-    var user = UserDefaults.standard
-    var infoUsuario:Dictionary<String,Any> = [:]
+    var userDefaults = UserDefaults.standard
+    var user = User(nome: "", saldo: 0, cpf: "", token: "")
 
     // MARK: - POST
-    func login() -> Dictionary<String,Any> {
-        var userData:Dictionary<String,Any> = [:]
-        let login = Login(username: "teste@teste.com.br", password: "abc123@")
-        Alamofire.request("https://api.mobile.test.solutis.xyz/login", method: .post, parameters: ["username":login.username,"password":login.password],encoding: JSONEncoding()).responseJSON { (response) in
+    func login(_ username:String,_ password:String) {
+        Alamofire.request("https://api.mobile.test.solutis.xyz/login", method: .post, parameters: ["username":username,"password":password],encoding: JSONEncoding()).responseJSON { (response) in
             switch response.result {
             case .success:
                 if let resposta = response.result.value as? Dictionary<String,Any> {
                     print(resposta)
                     let userInfo = resposta
-                    userData = userInfo
-                    self.user.setValue(login.password, forKey: "email")
-                    guard let nome = userInfo["nome"] else {return}
-                    guard let cpf = userInfo["cpf"] else {return}
-                    guard let saldo = userInfo["saldo"] else {return}
-                    guard let token = userInfo["token"] else {return}
-
-                    self.infoUsuario = ["nome":nome,
-                                        "cpf":cpf,
-                                        "saldo":saldo,
-                                        "token":token]
-                    
-                    self.pegaExtrato()
+                    self.userDefaults.setValue(username, forKey: "email")
+                    guard let nome = userInfo["nome"] as? String else {return}
+                    guard let cpf = userInfo["cpf"] as? String else {return}
+                    guard let saldo = userInfo["saldo"] as? Int else {return}
+                    guard let token = userInfo["token"] as? String else {return}
+                    self.user = User(nome: nome, saldo: saldo, cpf: cpf, token: token)
                 }
                 case .failure:
                     print(response.error!)
             }
         }
-        return userData
     }
     
     // MARK: - GET
-    func pegaExtrato() -> Array<Dictionary<String,Any>> {
+    func pegaExtrato(_ token:String) -> Array<Dictionary<String,Any>> {
         var listaExtrato:Array<Dictionary<String,Any>> = []
-        guard let token = self.infoUsuario["token"] as? String else { return [] }
-        
         Alamofire.request("https://api.mobile.test.solutis.xyz/extrato", method: .get,encoding: JSONEncoding(), headers: ["token":token]).responseJSON { (response) in switch response.result {
         case .success:
             if let resposta = response.result.value as? Array<Dictionary<String,Any>> {

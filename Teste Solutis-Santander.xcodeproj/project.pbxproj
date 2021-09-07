@@ -14,7 +14,6 @@
 		BA935A4E26E685ED00B1E904 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA935A4C26E685ED00B1E904 /* Main.storyboard */; };
 		BA935A5026E685F400B1E904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA935A4F26E685F400B1E904 /* Assets.xcassets */; };
 		BA935A5326E685F400B1E904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA935A5126E685F400B1E904 /* LaunchScreen.storyboard */; };
-		BA935A5E26E68E0800B1E904 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A5D26E68E0800B1E904 /* Login.swift */; };
 		BA935A6026E6926800B1E904 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A5F26E6926800B1E904 /* API.swift */; };
 		BA935A6226E6A63900B1E904 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A6126E6A63900B1E904 /* User.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 		BA935A4F26E685F400B1E904 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA935A5226E685F400B1E904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA935A5426E685F400B1E904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA935A5D26E68E0800B1E904 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		BA935A5F26E6926800B1E904 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BA935A6126E6A63900B1E904 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D39EB25E910DD9FA2BD1F133 /* Pods-Teste Solutis-Santander.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste Solutis-Santander.debug.xcconfig"; path = "Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 		BA935A5A26E6861400B1E904 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BA935A5D26E68E0800B1E904 /* Login.swift */,
 				BA935A6126E6A63900B1E904 /* User.swift */,
 			);
 			path = Model;
@@ -250,7 +247,6 @@
 				BA935A4726E685ED00B1E904 /* AppDelegate.swift in Sources */,
 				BA935A6226E6A63900B1E904 /* User.swift in Sources */,
 				BA935A4926E685ED00B1E904 /* SceneDelegate.swift in Sources */,
-				BA935A5E26E68E0800B1E904 /* Login.swift in Sources */,
 				BA935A6026E6926800B1E904 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

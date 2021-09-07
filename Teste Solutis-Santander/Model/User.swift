@@ -19,5 +19,4 @@ class User: NSObject {
         self.cpf = cpf
         self.token = token
     }
-
 }
