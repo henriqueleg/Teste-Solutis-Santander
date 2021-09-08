@@ -11,39 +11,46 @@ import Alamofire
 class API: NSObject {
     var userDefaults = UserDefaults.standard
     var user = User(nome: "", saldo: 0, cpf: "", token: "")
+    var listaExtrato:Array<Extratos> = []
 
     // MARK: - POST
-    func login(_ username:String,_ password:String) {
+    func login(_ username:String,_ password:String, completion: @escaping (_ usuario:User) -> Void)  {
+        var user = User(nome: "", saldo: 0, cpf: "", token: "")
         Alamofire.request("https://api.mobile.test.solutis.xyz/login", method: .post, parameters: ["username":username,"password":password],encoding: JSONEncoding()).responseJSON { (response) in
             switch response.result {
             case .success:
                 if let resposta = response.result.value as? Dictionary<String,Any> {
-                    print(resposta)
                     let userInfo = resposta
-                    self.userDefaults.setValue(username, forKey: "email")
                     guard let nome = userInfo["nome"] as? String else {return}
                     guard let cpf = userInfo["cpf"] as? String else {return}
-                    guard let saldo = userInfo["saldo"] as? Int else {return}
+                    guard let saldo = userInfo["saldo"] as? Double else {return}
                     guard let token = userInfo["token"] as? String else {return}
-                    self.user = User(nome: nome, saldo: saldo, cpf: cpf, token: token)
+                    self.userDefaults.setValue(username, forKey: "email")
+                    user = User(nome: nome, saldo: saldo, cpf: cpf, token: token)
+                    self.user = user
+                    completion(user)
+                    break
                 }
                 case .failure:
                     print(response.error!)
+                    break
             }
         }
     }
     
     // MARK: - GET
-    func pegaExtrato(_ token:String) -> Array<Dictionary<String,Any>> {
-        var listaExtrato:Array<Dictionary<String,Any>> = []
+    func pegaExtrato(_ token:String, completion: @escaping (_ lista:Array<Extratos>)->()) -> Array<Extratos> {
         Alamofire.request("https://api.mobile.test.solutis.xyz/extrato", method: .get,encoding: JSONEncoding(), headers: ["token":token]).responseJSON { (response) in switch response.result {
         case .success:
-            if let resposta = response.result.value as? Array<Dictionary<String,Any>> {
+            let resposta = try! JSONDecoder().decode([Extratos].self, from: response.data!) 
                 print(resposta)
-                listaExtrato = resposta
-            }
+                self.listaExtrato = resposta
+                completion(self.listaExtrato)
+                break
+            
         case .failure:
             print(response.error!)
+            break
             }
         }
         return listaExtrato

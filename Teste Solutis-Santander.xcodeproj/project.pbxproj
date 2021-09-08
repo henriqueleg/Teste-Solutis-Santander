@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1A3E57522D990CB812E9A499 /* Pods_Teste_Solutis_Santander.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89A3287C07C815C752020CB /* Pods_Teste_Solutis_Santander.framework */; };
+		BA73CF5626E8E94900B00120 /* ExtratoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73CF5526E8E94900B00120 /* ExtratoViewCell.swift */; };
+		BA73CF5826E8FBEE00B00120 /* Extratos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73CF5726E8FBEE00B00120 /* Extratos.swift */; };
+		BA73CF5A26E9391600B00120 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73CF5926E9391600B00120 /* CardView.swift */; };
 		BA935A4726E685ED00B1E904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A4626E685ED00B1E904 /* AppDelegate.swift */; };
 		BA935A4926E685ED00B1E904 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A4826E685ED00B1E904 /* SceneDelegate.swift */; };
 		BA935A4B26E685ED00B1E904 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A4A26E685ED00B1E904 /* ViewController.swift */; };
@@ -16,10 +19,14 @@
 		BA935A5326E685F400B1E904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA935A5126E685F400B1E904 /* LaunchScreen.storyboard */; };
 		BA935A6026E6926800B1E904 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A5F26E6926800B1E904 /* API.swift */; };
 		BA935A6226E6A63900B1E904 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A6126E6A63900B1E904 /* User.swift */; };
+		BA935A6726E8316E00B1E904 /* ExtratosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A6626E8316E00B1E904 /* ExtratosController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A89A3287C07C815C752020CB /* Pods_Teste_Solutis_Santander.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_Solutis_Santander.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA73CF5526E8E94900B00120 /* ExtratoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtratoViewCell.swift; sourceTree = "<group>"; };
+		BA73CF5726E8FBEE00B00120 /* Extratos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extratos.swift; sourceTree = "<group>"; };
+		BA73CF5926E9391600B00120 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		BA935A4326E685ED00B1E904 /* Teste Solutis-Santander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Teste Solutis-Santander.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA935A4626E685ED00B1E904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA935A4826E685ED00B1E904 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +37,7 @@
 		BA935A5426E685F400B1E904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA935A5F26E6926800B1E904 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BA935A6126E6A63900B1E904 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BA935A6626E8316E00B1E904 /* ExtratosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtratosController.swift; sourceTree = "<group>"; };
 		D39EB25E910DD9FA2BD1F133 /* Pods-Teste Solutis-Santander.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste Solutis-Santander.debug.xcconfig"; path = "Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander.debug.xcconfig"; sourceTree = "<group>"; };
 		E5D9A72E350C5984211333B7 /* Pods-Teste Solutis-Santander.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste Solutis-Santander.release.xcconfig"; path = "Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				BA935A6126E6A63900B1E904 /* User.swift */,
+				BA73CF5726E8FBEE00B00120 /* Extratos.swift */,
+				BA73CF5926E9391600B00120 /* CardView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				BA935A4A26E685ED00B1E904 /* ViewController.swift */,
+				BA935A6626E8316E00B1E904 /* ExtratosController.swift */,
+				BA73CF5526E8E94900B00120 /* ExtratoViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,7 +257,11 @@
 			files = (
 				BA935A4B26E685ED00B1E904 /* ViewController.swift in Sources */,
 				BA935A4726E685ED00B1E904 /* AppDelegate.swift in Sources */,
+				BA73CF5626E8E94900B00120 /* ExtratoViewCell.swift in Sources */,
+				BA73CF5A26E9391600B00120 /* CardView.swift in Sources */,
+				BA73CF5826E8FBEE00B00120 /* Extratos.swift in Sources */,
 				BA935A6226E6A63900B1E904 /* User.swift in Sources */,
+				BA935A6726E8316E00B1E904 /* ExtratosController.swift in Sources */,
 				BA935A4926E685ED00B1E904 /* SceneDelegate.swift in Sources */,
 				BA935A6026E6926800B1E904 /* API.swift in Sources */,
 			);

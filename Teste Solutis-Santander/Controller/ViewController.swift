@@ -15,10 +15,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var loginButtonVisual: UIButton!
     
+    var api = API()
+    
     @IBAction func loginButton(_ sender: Any) {
         guard let username = loginTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        API().login(username,password)
+        
+        
+        api.login(username, password) { (user) in
+            self.performSegue(withIdentifier: "extratos", sender: self)
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -29,6 +36,7 @@ class ViewController: UIViewController {
         loginTextField.clipsToBounds = true
         passwordTextField.layer.cornerRadius = 15
         passwordTextField.clipsToBounds = true
+        
         let userDefaults = UserDefaults.standard
         if userDefaults.value(forKey: "email") != nil {
             loginTextField.text = userDefaults.string(forKey: "email")
@@ -36,7 +44,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "extratos" {
+            let novaTela = segue.destination as! ExtratosController
+            novaTela.userInfo = api.user        }
+    }
 }
 
