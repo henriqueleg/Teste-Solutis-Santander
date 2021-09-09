@@ -12,6 +12,7 @@ class API: NSObject {
     var userDefaults = UserDefaults.standard
     var user = User(nome: "", saldo: 0, cpf: "", token: "")
     var listaExtrato:Array<Extratos> = []
+    var succeeded = false
 
     // MARK: - POST
     func login(_ username:String,_ password:String, completion: @escaping (_ usuario:User) -> Void)  {
@@ -21,18 +22,21 @@ class API: NSObject {
             case .success:
                 if let resposta = response.result.value as? Dictionary<String,Any> {
                     let userInfo = resposta
-                    guard let nome = userInfo["nome"] as? String else {return}
+                    guard let nome = userInfo["nome"] as? String else {completion(user)
+                        return }
                     guard let cpf = userInfo["cpf"] as? String else {return}
                     guard let saldo = userInfo["saldo"] as? Double else {return}
                     guard let token = userInfo["token"] as? String else {return}
-                    self.userDefaults.setValue(username, forKey: "email")
                     user = User(nome: nome, saldo: saldo, cpf: cpf, token: token)
                     self.user = user
+                    self.succeeded = true
                     completion(user)
                     break
                 }
                 case .failure:
                     print(response.error!)
+                    self.user = user
+                    completion(user)
                     break
             }
         }

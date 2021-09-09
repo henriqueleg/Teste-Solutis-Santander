@@ -8,5 +8,7 @@ target 'Teste Solutis-Santander' do
   # Pods for Teste Solutis-Santander
 
 	pod 'Alamofire', '~> 4.6'
+	pod 'CPF-CNPJ-Validator'
+	pod 'KeychainSwift', '~> 19.0'
 
 end

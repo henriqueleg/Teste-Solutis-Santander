@@ -11,6 +11,7 @@
 		BA73CF5626E8E94900B00120 /* ExtratoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73CF5526E8E94900B00120 /* ExtratoViewCell.swift */; };
 		BA73CF5826E8FBEE00B00120 /* Extratos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73CF5726E8FBEE00B00120 /* Extratos.swift */; };
 		BA73CF5A26E9391600B00120 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73CF5926E9391600B00120 /* CardView.swift */; };
+		BA73CF5D26E94BD100B00120 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73CF5C26E94BD100B00120 /* Validations.swift */; };
 		BA935A4726E685ED00B1E904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A4626E685ED00B1E904 /* AppDelegate.swift */; };
 		BA935A4926E685ED00B1E904 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A4826E685ED00B1E904 /* SceneDelegate.swift */; };
 		BA935A4B26E685ED00B1E904 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A4A26E685ED00B1E904 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		BA73CF5526E8E94900B00120 /* ExtratoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtratoViewCell.swift; sourceTree = "<group>"; };
 		BA73CF5726E8FBEE00B00120 /* Extratos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extratos.swift; sourceTree = "<group>"; };
 		BA73CF5926E9391600B00120 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		BA73CF5C26E94BD100B00120 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		BA935A4326E685ED00B1E904 /* Teste Solutis-Santander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Teste Solutis-Santander.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA935A4626E685ED00B1E904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA935A4826E685ED00B1E904 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BA73CF5B26E94BB500B00120 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BA73CF5C26E94BD100B00120 /* Validations.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		BA935A3A26E685ED00B1E904 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +102,7 @@
 		BA935A4526E685ED00B1E904 /* Teste Solutis-Santander */ = {
 			isa = PBXGroup;
 			children = (
+				BA73CF5B26E94BB500B00120 /* Utils */,
 				BA935A6326E6C82800B1E904 /* Servicos */,
 				BA935A5A26E6861400B1E904 /* Model */,
 				BA935A5B26E6861E00B1E904 /* View */,
@@ -109,6 +120,7 @@
 			children = (
 				BA935A6126E6A63900B1E904 /* User.swift */,
 				BA73CF5726E8FBEE00B00120 /* Extratos.swift */,
+				BA73CF5526E8E94900B00120 /* ExtratoViewCell.swift */,
 				BA73CF5926E9391600B00120 /* CardView.swift */,
 			);
 			path = Model;
@@ -128,7 +140,6 @@
 			children = (
 				BA935A4A26E685ED00B1E904 /* ViewController.swift */,
 				BA935A6626E8316E00B1E904 /* ExtratosController.swift */,
-				BA73CF5526E8E94900B00120 /* ExtratoViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -259,6 +270,7 @@
 				BA935A4726E685ED00B1E904 /* AppDelegate.swift in Sources */,
 				BA73CF5626E8E94900B00120 /* ExtratoViewCell.swift in Sources */,
 				BA73CF5A26E9391600B00120 /* CardView.swift in Sources */,
+				BA73CF5D26E94BD100B00120 /* Validations.swift in Sources */,
 				BA73CF5826E8FBEE00B00120 /* Extratos.swift in Sources */,
 				BA935A6226E6A63900B1E904 /* User.swift in Sources */,
 				BA935A6726E8316E00B1E904 /* ExtratosController.swift in Sources */,

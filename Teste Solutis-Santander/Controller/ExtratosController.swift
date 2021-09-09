@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 class ExtratosController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var nomeTextField: UILabel!
