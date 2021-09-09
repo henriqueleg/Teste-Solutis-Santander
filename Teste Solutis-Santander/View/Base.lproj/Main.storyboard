@@ -13,24 +13,42 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="Login" customClass="ViewController" customModule="Teste_Solutis_Santander" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7A-Nc-5OO" userLabel="UsernameField">
-                                <rect key="frame" x="57" y="333" width="300" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7A-Nc-5OO" userLabel="UsernameField">
+                                <rect key="frame" x="57" y="289" width="300" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Yx-qT-lh6" userLabel="PasswordField">
-                                <rect key="frame" x="57" y="395" width="300" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Yx-qT-lh6" userLabel="PasswordField">
+                                <rect key="frame" x="57" y="351" width="300" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cI6-Xy-Fs6">
-                                <rect key="frame" x="157" y="663" width="100" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Assets Teste Solutis_logo_solutis" translatesAutoresizingMaskIntoConstraints="NO" id="KGx-dx-eUV">
+                                <rect key="frame" x="87" y="96" width="240" height="91"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email ou senha invalidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSE-MK-xzy">
+                                <rect key="frame" x="57" y="260" width="185" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hWx-bS-FNf">
+                                <rect key="frame" x="306" y="421" width="51" height="31"/>
+                                <connections>
+                                    <action selector="usernameSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="V5U-lm-VnL"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salvar Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWM-zH-GJg">
+                                <rect key="frame" x="190" y="426" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cI6-Xy-Fs6">
+                                <rect key="frame" x="157" y="517" width="100" height="35"/>
                                 <color key="backgroundColor" red="0.0" green="0.54302829128878938" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                 <color key="tintColor" white="0.91608391609999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,34 +57,30 @@
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YOS-s7-cCx"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Assets Teste Solutis_logo_solutis" translatesAutoresizingMaskIntoConstraints="NO" id="KGx-dx-eUV">
-                                <rect key="frame" x="87" y="140" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email ou senha invalidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSE-MK-xzy">
-                                <rect key="frame" x="57" y="304" width="185" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemRedColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hWx-bS-FNf">
-                                <rect key="frame" x="308" y="465" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="usernameSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="V5U-lm-VnL"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salvar Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWM-zH-GJg">
-                                <rect key="frame" x="190" y="470" width="110" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.91608391608391604" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hWx-bS-FNf" firstAttribute="leading" secondItem="XWM-zH-GJg" secondAttribute="trailing" constant="6" id="1n3-2E-z35"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k7A-Nc-5OO" secondAttribute="trailing" constant="57" id="2at-Iz-9gg"/>
+                            <constraint firstItem="hWx-bS-FNf" firstAttribute="top" secondItem="7Yx-qT-lh6" secondAttribute="bottom" constant="36" id="76W-K0-DMZ"/>
+                            <constraint firstItem="KGx-dx-eUV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="96" id="7oC-uN-fj8"/>
+                            <constraint firstItem="7Yx-qT-lh6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="BtB-sM-oWP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hWx-bS-FNf" secondAttribute="trailing" constant="59" id="DH8-mr-arW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YSE-MK-xzy" secondAttribute="trailing" constant="172" id="EJ1-5v-5cx"/>
+                            <constraint firstItem="7Yx-qT-lh6" firstAttribute="top" secondItem="k7A-Nc-5OO" secondAttribute="bottom" constant="28" id="JEy-Dc-Lrz"/>
+                            <constraint firstItem="k7A-Nc-5OO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="NBS-df-dvQ"/>
+                            <constraint firstItem="cI6-Xy-Fs6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="TtG-fl-ZXm"/>
+                            <constraint firstItem="YSE-MK-xzy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="UFh-5b-xPa"/>
+                            <constraint firstItem="YSE-MK-xzy" firstAttribute="top" secondItem="KGx-dx-eUV" secondAttribute="bottom" constant="73" id="XBf-uz-H5M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cI6-Xy-Fs6" secondAttribute="trailing" constant="157" id="eS5-6A-5pP"/>
+                            <constraint firstItem="XWM-zH-GJg" firstAttribute="top" secondItem="7Yx-qT-lh6" secondAttribute="bottom" constant="41" id="kYe-Di-xdo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Yx-qT-lh6" secondAttribute="trailing" constant="57" id="lc0-OU-7OY"/>
+                            <constraint firstItem="KGx-dx-eUV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="rRs-o8-Up9"/>
+                            <constraint firstItem="cI6-Xy-Fs6" firstAttribute="top" secondItem="XWM-zH-GJg" secondAttribute="bottom" constant="70" id="rYv-Bp-vYw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KGx-dx-eUV" secondAttribute="trailing" constant="87" id="sf4-ND-CUS"/>
+                            <constraint firstItem="k7A-Nc-5OO" firstAttribute="top" secondItem="YSE-MK-xzy" secondAttribute="bottom" constant="8" symbolic="YES" id="z45-DI-Bcz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z0i-MW-9Kn"/>
                     <connections>
@@ -87,7 +101,7 @@
             <objects>
                 <viewController storyboardIdentifier="extratos" title="extratos" id="bY3-d5-50s" userLabel="Extratos" customClass="ExtratosController" customModule="Teste_Solutis_Santander" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hvc-uF-hLl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Eb-hz-xr7">
@@ -128,9 +142,8 @@
                                         <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1C-IZ-pXN">
-                                        <rect key="frame" x="351" y="71" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1C-IZ-pXN">
+                                        <rect key="frame" x="355" y="71" width="26" height="26"/>
                                         <state key="normal" image="Assets Teste Solutis_icon_logout"/>
                                         <connections>
                                             <action selector="logoutButton:" destination="bY3-d5-50s" eventType="touchUpInside" id="myA-ym-DvK"/>
@@ -140,15 +153,17 @@
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="254" id="1us-uw-UJa"/>
+                                    <constraint firstItem="B1C-IZ-pXN" firstAttribute="top" secondItem="1Eb-hz-xr7" secondAttribute="top" constant="71" id="Tyt-oS-bdm"/>
+                                    <constraint firstAttribute="trailing" secondItem="B1C-IZ-pXN" secondAttribute="trailing" constant="33" id="Vmd-Xj-kwS"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6rH-L3-tyg">
-                                <rect key="frame" x="0.0" y="254" width="414" height="642"/>
+                                <rect key="frame" x="0.0" y="254" width="414" height="588"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaExtrato" rowHeight="100" id="Jg2-hD-AK4" customClass="ExtratoViewCell" customModule="Teste_Solutis_Santander" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="celulaExtrato" rowHeight="100" id="Jg2-hD-AK4" customClass="ExtratoViewCell" customModule="Teste_Solutis_Santander" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jg2-hD-AK4" id="gbz-9v-nT5">
@@ -172,17 +187,15 @@
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00/00/0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnU-el-S31">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00/00/0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnU-el-S31">
                                                             <rect key="frame" x="279" y="15" width="92" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <edgeInsets key="layoutMargins" top="10" left="5" bottom="10" right="5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xu-q3-XcH">
-                                                            <rect key="frame" x="227" y="49" width="144" height="24"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xu-q3-XcH">
+                                                            <rect key="frame" x="323" y="49" width="48" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -190,6 +203,12 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" systemColor="labelColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="ZnU-el-S31" firstAttribute="top" secondItem="rIe-Gc-TZ2" secondAttribute="top" constant="15" id="BDf-VS-9Wc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="9xu-q3-XcH" secondAttribute="trailing" constant="23" id="DSl-nj-dM5"/>
+                                                        <constraint firstAttribute="bottom" secondItem="9xu-q3-XcH" secondAttribute="bottom" constant="17" id="gVv-1j-f95"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ZnU-el-S31" secondAttribute="trailing" constant="23" id="kCX-X5-Wkd"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -261,7 +280,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="s6B-Gs-kid"/>
+        <segue reference="bln-Ux-QGg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Assets Teste Solutis_icon_logout" width="26" height="26"/>

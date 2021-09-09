@@ -7,6 +7,7 @@
 
 import UIKit
 import KeychainSwift
+import SVProgressHUD
 
 class ViewController: UIViewController {
 
@@ -30,7 +31,9 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func loginButton(_ sender: Any) {
+    @IBAction func loginButton(_ sender: UIButton) {
+        self.loginButtonVisual.isEnabled = false
+        SVProgressHUD.show()
         errorLabel.isHidden = true
         guard let username = loginTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -41,9 +44,9 @@ class ViewController: UIViewController {
             if validator.validaSenha(password) {
                 
             api.login(username, password) { (user) in
-                
+                self.loginButtonVisual.isEnabled = true
+                SVProgressHUD.dismiss()
                 if (self.api.succeeded == false) {
-                    
                     self.errorLabel.isHidden = false
                     self.passwordTextField.text = ""
                     }
@@ -56,8 +59,10 @@ class ViewController: UIViewController {
                 }
             }
             else {
+                SVProgressHUD.dismiss()
                 errorLabel.isHidden = false
                 passwordTextField.text = ""
+                self.loginButtonVisual.isEnabled = true
             }
         }
     }

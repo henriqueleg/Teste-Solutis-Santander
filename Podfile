@@ -10,5 +10,6 @@ target 'Teste Solutis-Santander' do
 	pod 'Alamofire', '~> 4.6'
 	pod 'CPF-CNPJ-Validator'
 	pod 'KeychainSwift', '~> 19.0'
+	pod 'SVProgressHUD'
 
 end
