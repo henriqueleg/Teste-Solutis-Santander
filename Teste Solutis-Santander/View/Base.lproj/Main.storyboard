@@ -13,43 +13,46 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="Login" customClass="ViewController" customModule="Teste_Solutis_Santander" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7A-Nc-5OO" userLabel="UsernameField">
-                                <rect key="frame" x="57" y="289" width="300" height="34"/>
+                                <rect key="frame" x="57" y="333" width="300" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Yx-qT-lh6" userLabel="PasswordField">
-                                <rect key="frame" x="57" y="351" width="300" height="34"/>
+                                <rect key="frame" x="57" y="395" width="300" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Assets Teste Solutis_logo_solutis" translatesAutoresizingMaskIntoConstraints="NO" id="KGx-dx-eUV">
-                                <rect key="frame" x="87" y="96" width="240" height="91"/>
+                                <rect key="frame" x="87" y="140" width="240" height="91"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email ou senha invalidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSE-MK-xzy">
-                                <rect key="frame" x="57" y="260" width="185" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email ou senha invalidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSE-MK-xzy">
+                                <rect key="frame" x="57" y="260" width="298" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hWx-bS-FNf">
-                                <rect key="frame" x="306" y="421" width="51" height="31"/>
+                                <rect key="frame" x="306" y="465" width="51" height="31"/>
                                 <connections>
                                     <action selector="usernameSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="V5U-lm-VnL"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salvar Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWM-zH-GJg">
-                                <rect key="frame" x="190" y="426" width="110" height="21"/>
+                                <rect key="frame" x="190" y="470" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cI6-Xy-Fs6">
-                                <rect key="frame" x="157" y="517" width="100" height="35"/>
+                                <rect key="frame" x="157" y="561" width="100" height="35"/>
                                 <color key="backgroundColor" red="0.0" green="0.54302829128878938" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="npN-cB-6ZJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                 <color key="tintColor" white="0.91608391609999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Login"/>
@@ -67,13 +70,11 @@
                             <constraint firstItem="KGx-dx-eUV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="96" id="7oC-uN-fj8"/>
                             <constraint firstItem="7Yx-qT-lh6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="BtB-sM-oWP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hWx-bS-FNf" secondAttribute="trailing" constant="59" id="DH8-mr-arW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YSE-MK-xzy" secondAttribute="trailing" constant="172" id="EJ1-5v-5cx"/>
+                            <constraint firstItem="cI6-Xy-Fs6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DP2-bh-Wgs"/>
                             <constraint firstItem="7Yx-qT-lh6" firstAttribute="top" secondItem="k7A-Nc-5OO" secondAttribute="bottom" constant="28" id="JEy-Dc-Lrz"/>
                             <constraint firstItem="k7A-Nc-5OO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="NBS-df-dvQ"/>
-                            <constraint firstItem="cI6-Xy-Fs6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="TtG-fl-ZXm"/>
                             <constraint firstItem="YSE-MK-xzy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="UFh-5b-xPa"/>
                             <constraint firstItem="YSE-MK-xzy" firstAttribute="top" secondItem="KGx-dx-eUV" secondAttribute="bottom" constant="73" id="XBf-uz-H5M"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cI6-Xy-Fs6" secondAttribute="trailing" constant="157" id="eS5-6A-5pP"/>
                             <constraint firstItem="XWM-zH-GJg" firstAttribute="top" secondItem="7Yx-qT-lh6" secondAttribute="bottom" constant="41" id="kYe-Di-xdo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Yx-qT-lh6" secondAttribute="trailing" constant="57" id="lc0-OU-7OY"/>
                             <constraint firstItem="KGx-dx-eUV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="rRs-o8-Up9"/>
@@ -94,14 +95,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="78"/>
+            <point key="canvasLocation" x="837.68115942028987" y="77.678571428571431"/>
         </scene>
         <!--Extratos-->
         <scene sceneID="KNg-jw-aFK">
             <objects>
                 <viewController storyboardIdentifier="extratos" title="extratos" id="bY3-d5-50s" userLabel="Extratos" customClass="ExtratosController" customModule="Teste_Solutis_Santander" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hvc-uF-hLl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Eb-hz-xr7">
@@ -158,7 +159,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6rH-L3-tyg">
-                                <rect key="frame" x="0.0" y="254" width="414" height="588"/>
+                                <rect key="frame" x="0.0" y="254" width="414" height="642"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -280,7 +281,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bln-Ux-QGg"/>
+        <segue reference="s6B-Gs-kid"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Assets Teste Solutis_icon_logout" width="26" height="26"/>

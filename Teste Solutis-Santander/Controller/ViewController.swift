@@ -33,7 +33,6 @@ class ViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: UIButton) {
         self.loginButtonVisual.isEnabled = false
-        SVProgressHUD.show()
         errorLabel.isHidden = true
         guard let username = loginTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -42,7 +41,7 @@ class ViewController: UIViewController {
         if validator.validaEmail(username) || validator.validaCpfOuCnpj(username) {
             
             if validator.validaSenha(password) {
-                
+                SVProgressHUD.show()
             api.login(username, password) { (user) in
                 self.loginButtonVisual.isEnabled = true
                 SVProgressHUD.dismiss()
@@ -64,6 +63,11 @@ class ViewController: UIViewController {
                 passwordTextField.text = ""
                 self.loginButtonVisual.isEnabled = true
             }
+        } else {
+            SVProgressHUD.dismiss()
+            errorLabel.isHidden = false
+            passwordTextField.text = ""
+            self.loginButtonVisual.isEnabled = true
         }
     }
     
