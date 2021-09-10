@@ -47,7 +47,6 @@ class API: NSObject {
         Alamofire.request("https://api.mobile.test.solutis.xyz/extrato", method: .get,encoding: JSONEncoding(), headers: ["token":token]).responseJSON { (response) in switch response.result {
         case .success:
             let resposta = try! JSONDecoder().decode([Extratos].self, from: response.data!) 
-                print(resposta)
                 self.listaExtrato = resposta
                 completion(self.listaExtrato)
                 break

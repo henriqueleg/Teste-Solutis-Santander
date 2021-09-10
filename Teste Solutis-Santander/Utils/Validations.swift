@@ -33,4 +33,16 @@ class Validation {
         }
         return false
     }
+    
+    func validaTudo(_ username:String,_ password:String ) -> Bool {
+        if validaEmail(username) || validaCpfOuCnpj(username) {
+            if validaSenha(password) {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return false
+        }
+    }
 }

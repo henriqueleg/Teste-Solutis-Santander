@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var api = API()
     var succeded:Bool = false
     
+    //MARK: - Keychain
     @IBOutlet weak var usernameSwitch: UISwitch!
     @IBAction func usernameSwitchPressed(_ sender: UISwitch) {
         if sender.isOn {
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: - LoginButton
     @IBAction func loginButton(_ sender: UIButton) {
         self.loginButtonVisual.isEnabled = false
         errorLabel.isHidden = true
@@ -38,19 +40,15 @@ class ViewController: UIViewController {
         guard let password = passwordTextField.text else { return }
         let validator = Validation()
         
-        if validator.validaEmail(username) || validator.validaCpfOuCnpj(username) {
-            
-            if validator.validaSenha(password) {
+        if validator.validaTudo(username, password) {
                 SVProgressHUD.show()
             api.login(username, password) { (user) in
-                self.loginButtonVisual.isEnabled = true
-                SVProgressHUD.dismiss()
                 if (self.api.succeeded == false) {
-                    self.errorLabel.isHidden = false
-                    self.passwordTextField.text = ""
+                    self.loginError()
                     }
                 else if self.api.succeeded == true {
                     if self.usernameSwitch.isOn {
+                        SVProgressHUD.dismiss()
                         self.keychain.set(username, forKey: "username")
                     }
                     self.performSegue(withIdentifier: "extratos", sender: self)
@@ -58,19 +56,15 @@ class ViewController: UIViewController {
                 }
             }
             else {
-                SVProgressHUD.dismiss()
-                errorLabel.isHidden = false
-                passwordTextField.text = ""
-                self.loginButtonVisual.isEnabled = true
+                loginError()
             }
-        } else {
-            SVProgressHUD.dismiss()
-            errorLabel.isHidden = false
-            passwordTextField.text = ""
-            self.loginButtonVisual.isEnabled = true
-        }
     }
     
+    @objc func edited() {
+        errorLabel.isHidden = true
+    }
+    
+    //MARK: - Startview
     override func viewDidLoad() {
         super.viewDidLoad()
         if keychain.getBool("salvaUsuario") == true {
@@ -84,28 +78,35 @@ class ViewController: UIViewController {
         passwordTextField.addTarget(self, action:#selector(edited),
                                     for : .editingChanged)
 
-        loginButtonVisual.layer.cornerRadius = 20
-        loginButtonVisual.clipsToBounds = true
-        loginTextField.layer.cornerRadius = 15
-        loginTextField.clipsToBounds = true
-        passwordTextField.layer.cornerRadius = 15
-        passwordTextField.clipsToBounds = true
+        elementsFormatter()
         
         if keychain.get("username") != nil {
             loginTextField.text = keychain.get("username")
         }
-        // Do any additional setup after loading the view.
-        
     }
     
+    //MARK: - Prepare4Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "extratos" {
             let novaTela = segue.destination as! ExtratosController
             novaTela.userInfo = api.user        }
     }
     
-    @objc func edited() {
-        errorLabel.isHidden = true
+    //MARK: - Visual/Feedback
+    func loginError(){
+        SVProgressHUD.dismiss()
+        errorLabel.isHidden = false
+        passwordTextField.text = ""
+        self.loginButtonVisual.isEnabled = true
+    }
+    
+    func elementsFormatter() {
+        loginButtonVisual.layer.cornerRadius = 20
+        loginButtonVisual.clipsToBounds = true
+        loginTextField.layer.cornerRadius = 15
+        loginTextField.clipsToBounds = true
+        passwordTextField.layer.cornerRadius = 15
+        passwordTextField.clipsToBounds = true
     }
 }
 

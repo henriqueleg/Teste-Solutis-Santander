@@ -19,11 +19,11 @@ class ExtratosController: UIViewController, UITableViewDataSource, UITableViewDe
         showAlert()
     }
     
-    var userDefaults = UserDefaults.standard
     var userInfo = User(nome: "", saldo: 0.0, cpf: "", token: "")
     var listaExtratos:Array<Extratos> = []
     let api = API()
     
+    //MARK: - Startview
     override func viewDidLoad() {
         super.viewDidLoad()
             api.pegaExtrato(userInfo.token, completion: { listaExtratos in
@@ -33,14 +33,10 @@ class ExtratosController: UIViewController, UITableViewDataSource, UITableViewDe
         nomeTextField.text = userInfo.nome
         cpfTextField.text = formataCPF(userInfo.cpf)
         saldoTextField.text = formataValor(userInfo.saldo)
-        let gradientColor = CAGradientLayer()
-        gradientColor.colors = [UIColor(red: 176.0/255.0, green: 226.0/255.0, blue: 255.0/255.0, alpha: 1.0).cgColor,UIColor(red: 28.0/255.0, green: 120.0/255.0, blue: 212.0/255.0, alpha: 1.0).cgColor]
-        gradientColor.frame = gradientView.bounds
-        gradientColor.startPoint = CGPoint(x: 0, y: 1)
-        gradientColor.endPoint = CGPoint(x: 1, y: 1)
-        gradientView.layer.insertSublayer(gradientColor, at: 0)
+        gradient()
     }
     
+    //MARK: - Tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listaExtratos.count
     }
@@ -63,6 +59,7 @@ class ExtratosController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    // MARK: - Alert
     func showAlert() {
         let logoutAlert = UIAlertController(title: "Sair", message: "Deseja mesmo sair?", preferredStyle: UIAlertController.Style.alert)
         logoutAlert.addAction(UIAlertAction(title: "Sair", style: .default, handler: { (action:UIAlertAction!) in
@@ -75,6 +72,7 @@ class ExtratosController: UIViewController, UITableViewDataSource, UITableViewDe
         present(logoutAlert, animated: true, completion: nil)
     }
     
+    // MARK: - Formatters
     func formataValor (_ valor:Double) -> String {
         var formatedValue = String(format: "%.2f", valor)
         formatedValue = "R$ " + formatedValue.replacingOccurrences(of: ".", with: ",")
@@ -105,5 +103,15 @@ class ExtratosController: UIViewController, UITableViewDataSource, UITableViewDe
         let fixedDate = dataCerta.string(from: wrongDate)
         return fixedDate
         }
+    
+    //MARK: - Gradient
+    func gradient() {
+        let gradientColor = CAGradientLayer()
+        gradientColor.colors = [UIColor(red: 176.0/255.0, green: 226.0/255.0, blue: 255.0/255.0, alpha: 1.0).cgColor,UIColor(red: 28.0/255.0, green: 120.0/255.0, blue: 212.0/255.0, alpha: 1.0).cgColor]
+        gradientColor.frame = gradientView.bounds
+        gradientColor.startPoint = CGPoint(x: 0, y: 1)
+        gradientColor.endPoint = CGPoint(x: 1, y: 1)
+        gradientView.layer.insertSublayer(gradientColor, at: 0)
+    }
 }
 
