@@ -21,6 +21,7 @@
 		BA935A6026E6926800B1E904 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A5F26E6926800B1E904 /* API.swift */; };
 		BA935A6226E6A63900B1E904 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A6126E6A63900B1E904 /* User.swift */; };
 		BA935A6726E8316E00B1E904 /* ExtratosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A6626E8316E00B1E904 /* ExtratosController.swift */; };
+		BAD3311E26EBCFD700E006BB /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3311D26EBCFD700E006BB /* Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		BA935A5F26E6926800B1E904 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BA935A6126E6A63900B1E904 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BA935A6626E8316E00B1E904 /* ExtratosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtratosController.swift; sourceTree = "<group>"; };
+		BAD3311D26EBCFD700E006BB /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		D39EB25E910DD9FA2BD1F133 /* Pods-Teste Solutis-Santander.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste Solutis-Santander.debug.xcconfig"; path = "Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander.debug.xcconfig"; sourceTree = "<group>"; };
 		E5D9A72E350C5984211333B7 /* Pods-Teste Solutis-Santander.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste Solutis-Santander.release.xcconfig"; path = "Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				BA73CF5C26E94BD100B00120 /* Validations.swift */,
+				BAD3311D26EBCFD700E006BB /* Formatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD3311E26EBCFD700E006BB /* Formatter.swift in Sources */,
 				BA935A4B26E685ED00B1E904 /* ViewController.swift in Sources */,
 				BA935A4726E685ED00B1E904 /* AppDelegate.swift in Sources */,
 				BA73CF5626E8E94900B00120 /* ExtratoViewCell.swift in Sources */,

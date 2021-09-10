@@ -47,8 +47,8 @@ class ViewController: UIViewController {
                     self.loginError()
                     }
                 else if self.api.succeeded == true {
+                    SVProgressHUD.dismiss()
                     if self.usernameSwitch.isOn {
-                        SVProgressHUD.dismiss()
                         self.keychain.set(username, forKey: "username")
                     }
                     self.performSegue(withIdentifier: "extratos", sender: self)

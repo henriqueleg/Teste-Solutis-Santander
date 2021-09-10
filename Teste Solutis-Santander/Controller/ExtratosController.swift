@@ -22,6 +22,7 @@ class ExtratosController: UIViewController, UITableViewDataSource, UITableViewDe
     var userInfo = User(nome: "", saldo: 0.0, cpf: "", token: "")
     var listaExtratos:Array<Extratos> = []
     let api = API()
+    let formatter = Formatter()
     
     //MARK: - Startview
     override func viewDidLoad() {
@@ -31,8 +32,8 @@ class ExtratosController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.tableView.reloadData()
         })
         nomeTextField.text = userInfo.nome
-        cpfTextField.text = formataCPF(userInfo.cpf)
-        saldoTextField.text = formataValor(userInfo.saldo)
+        cpfTextField.text = formatter.formataCPF(userInfo.cpf)
+        saldoTextField.text = formatter.formataValor(userInfo.saldo)
         gradient()
     }
     
@@ -44,8 +45,8 @@ class ExtratosController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celulaExtrato", for: indexPath) as! ExtratoViewCell
         cell.descricaoLabel.text = listaExtratos[indexPath.row].descricao
-        cell.dataLabel.text = formataData(listaExtratos[indexPath.row].data)
-        cell.valorLabel.text = formataValor(listaExtratos[indexPath.row].valor)
+        cell.dataLabel.text = formatter.formataData(listaExtratos[indexPath.row].data)
+        cell.valorLabel.text = formatter.formataValor(listaExtratos[indexPath.row].valor)
         if listaExtratos[indexPath.row].valor < 0 {
             cell.tipoLabel.text = "Pagamento"
         } else {
@@ -71,38 +72,6 @@ class ExtratosController: UIViewController, UITableViewDataSource, UITableViewDe
         
         present(logoutAlert, animated: true, completion: nil)
     }
-    
-    // MARK: - Formatters
-    func formataValor (_ valor:Double) -> String {
-        var formatedValue = String(format: "%.2f", valor)
-        formatedValue = "R$ " + formatedValue.replacingOccurrences(of: ".", with: ",")
-        return formatedValue
-    }
-    
-    func formataCPF(_ cpf:String) -> String {
-        var i = 0
-        var novoCpf:String = ""
-        for numero in cpf {
-            if i == 3 || i == 6 {
-                novoCpf.append(".")
-            } else if i == 9 {
-                novoCpf.append("-")
-            }
-            novoCpf.append(numero)
-            i+=1
-        }
-        return novoCpf
-    }
-    
-    func formataData(_ data:String) -> String{
-        let dataErrada = DateFormatter()
-        dataErrada.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        let wrongDate = dataErrada.date(from: data)!
-        let dataCerta = DateFormatter()
-        dataCerta.dateFormat = "dd/MM/yyyy"
-        let fixedDate = dataCerta.string(from: wrongDate)
-        return fixedDate
-        }
     
     //MARK: - Gradient
     func gradient() {
