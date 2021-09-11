@@ -93,7 +93,7 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Visual/Feedback
-    func loginError(){
+    func loginError() {
         SVProgressHUD.dismiss()
         errorLabel.isHidden = false
         passwordTextField.text = ""

@@ -49,13 +49,10 @@ class ExtratosController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.valorLabel.text = formatter.formataValor(listaExtratos[indexPath.row].valor)
         if listaExtratos[indexPath.row].valor < 0 {
             cell.tipoLabel.text = "Pagamento"
+            cell.valorLabel.textColor = UIColor.red
         } else {
             cell.tipoLabel.text = "Recebimento"
-        }
-        if listaExtratos[indexPath.row].valor > 0 {
             cell.valorLabel.textColor = UIColor(red: 17.0/255.0, green: 200.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-        } else {
-            cell.valorLabel.textColor = UIColor.red
         }
         return cell
     }
