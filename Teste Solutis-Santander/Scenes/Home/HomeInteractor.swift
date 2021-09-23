@@ -14,7 +14,8 @@ import UIKit
 
 protocol HomeBusinessLogic
 {
-    func doSomething(request: Home.UserData.Request)
+    func showUserData(request: Home.UserData.Request)
+    func showExtratos(request: Home.ExtratosData.Request)
     
 }
 
@@ -25,19 +26,23 @@ protocol HomeDataStore
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore
 {
-    
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
     var user: User?
     
     // MARK: Do something
     
-    func doSomething(request: Home.UserData.Request)
+    func showUserData(request: Home.UserData.Request)
     {
-        //worker = HomeWorker()
-        //worker?.doSomeWork()
-        
         let response = Home.UserData.Response(user: user!)
-        presenter?.presentSomething(response: response)
+        presenter?.presentUserData(response: response)
+    }
+    
+    func showExtratos(request: Home.ExtratosData.Request) {
+        worker = HomeWorker()
+        worker?.pegaExtratos(token: user!.token, completion: { listaExtratos in
+            let response = Home.ExtratosData.Response(extrato: listaExtratos)
+            self.presenter?.presentExtrato(response: response)
+        })
     }
 }

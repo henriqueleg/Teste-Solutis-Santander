@@ -27,7 +27,7 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
     weak var viewController: LoginViewController?
     var dataStore: LoginDataStore?
     
-    // MARK: Routing
+    // MARK: - Routing
     
     func routeToHome(segue: UIStoryboardSegue?)
     {
@@ -44,14 +44,14 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
         }
     }
     
-    //MARK: Navigation
+    //MARK: - Navigation
     
     func navigateToHome(source: LoginViewController, destination: HomeViewController)
     {
         source.show(destination, sender: nil)
     }
     
-    //MARK: Passing data
+    //MARK: - Passing data
     
     func passDataToHome(source: LoginDataStore, destination: inout HomeDataStore)
     {

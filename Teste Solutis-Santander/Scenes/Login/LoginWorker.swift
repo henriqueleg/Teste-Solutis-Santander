@@ -14,16 +14,8 @@ import UIKit
 
 class LoginWorker
 {
-    private let validation = Validation()
     private let api = API()
     
-    func pegaExtratos (token: String, completionHandler: @escaping ()->())
-  {
-    api.pegaExtrato(token, completion: { listaExtratos in
-        completionHandler()
-        return
-})
-  }
     func doLogin(username: String, password: String, completion: @escaping (_ usuario:User) -> Void) {
         api.login(username, password) { user in
             completion(user)

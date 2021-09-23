@@ -14,20 +14,35 @@ import UIKit
 
 enum Home
 {
-  // MARK: Use cases
-  
-  enum UserData
-  {
-    struct Request
+    // MARK: Use cases
+    
+    enum UserData
     {
+        struct Request
+        {
+        }
+        struct Response
+        {
+            let user: User
+        }
+        struct ViewModel
+        {
+            let user: User
+        }
     }
-    struct Response
+    enum ExtratosData
     {
-        let user: User
+        struct Request
+        {
+        }
+        struct Response
+        {
+            let extrato: Array<Extratos>
+        }
+        struct ViewModel
+        {
+            let extrato: Array<Extratos>
+        }
     }
-    struct ViewModel
-    {
-        let user: User
-    }
-  }
+    
 }

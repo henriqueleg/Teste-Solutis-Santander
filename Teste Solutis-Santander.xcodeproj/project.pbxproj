@@ -183,12 +183,12 @@
 		BAD3311F26F3C07800E006BB /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				BAD3312426F3C0A900E006BB /* LoginViewController.swift */,
-				BAD3312526F3C0A900E006BB /* LoginInteractor.swift */,
 				BAD3312026F3C0A900E006BB /* LoginPresenter.swift */,
 				BAD3312126F3C0A900E006BB /* LoginWorker.swift */,
-				BAD3312326F3C0A900E006BB /* LoginModels.swift */,
 				BAD3312226F3C0A900E006BB /* LoginRouter.swift */,
+				BAD3312326F3C0A900E006BB /* LoginModels.swift */,
+				BAD3312426F3C0A900E006BB /* LoginViewController.swift */,
+				BAD3312526F3C0A900E006BB /* LoginInteractor.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";

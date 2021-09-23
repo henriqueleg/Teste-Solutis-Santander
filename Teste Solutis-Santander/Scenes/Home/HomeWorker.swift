@@ -14,7 +14,12 @@ import UIKit
 
 class HomeWorker
 {
-  func doSomeWork()
-  {
-  }
+    private let api = API()
+    
+    func pegaExtratos (token: String, completion: @escaping (_ lista:Array<Extratos>)->()) {
+    api.pegaExtrato(token) { listaExtratos in
+        completion(listaExtratos)
+    }
+        return
+    }
 }

@@ -220,6 +220,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bY3-d5-50s" id="fYc-wX-YTp"/>
+                                    <outlet property="delegate" destination="bY3-d5-50s" id="cT3-KA-6RO"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wi5-OB-fS3"/>
@@ -237,8 +241,10 @@
                     <navigationItem key="navigationItem" id="NMS-nY-vQg"/>
                     <connections>
                         <outlet property="cpfTextField" destination="6p6-Lp-eu1" id="ftV-ES-caJ"/>
+                        <outlet property="gradientView" destination="1Eb-hz-xr7" id="8RW-wu-ys5"/>
                         <outlet property="nomeTextField" destination="HsF-R1-nSA" id="bvN-NQ-yfk"/>
                         <outlet property="saldoTextField" destination="H9p-Ji-rG5" id="irc-hE-6M7"/>
+                        <outlet property="tableView" destination="6rH-L3-tyg" id="wva-4V-mJW"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="logout" id="bln-Ux-QGg"/>
                     </connections>
                 </viewController>

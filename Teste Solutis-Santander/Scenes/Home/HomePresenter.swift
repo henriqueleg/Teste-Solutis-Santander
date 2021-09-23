@@ -14,18 +14,25 @@ import UIKit
 
 protocol HomePresentationLogic
 {
-  func presentSomething(response: Home.UserData.Response)
+    func presentUserData(response: Home.UserData.Response)
+    func presentExtrato(response: Home.ExtratosData.Response)
 }
 
 class HomePresenter: HomePresentationLogic
 {
-  weak var viewController: HomeDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: Home.UserData.Response)
-  {
-    let viewModel = Home.UserData.ViewModel(user: response.user)
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: HomeDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentUserData(response: Home.UserData.Response)
+    {
+        let viewModel = Home.UserData.ViewModel(user: response.user)
+        viewController?.displayUserData(viewModel: viewModel)
+    }
+    
+    func presentExtrato(response: Home.ExtratosData.Response) {
+        
+        let viewModel = Home.ExtratosData.ViewModel(extrato: response.extrato)
+        viewController?.displayExtratos(viewModel: viewModel)
+    }
 }

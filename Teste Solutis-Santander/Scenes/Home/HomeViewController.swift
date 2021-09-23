@@ -14,10 +14,11 @@ import UIKit
 
 protocol HomeDisplayLogic: AnyObject
 {
-    func displaySomething(viewModel: Home.UserData.ViewModel)
+    func displayUserData(viewModel: Home.UserData.ViewModel)
+    func displayExtratos(viewModel: Home.ExtratosData.ViewModel)
 }
 
-class HomeViewController: UIViewController, HomeDisplayLogic
+class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDataSource, UITableViewDelegate
 {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
@@ -69,7 +70,9 @@ class HomeViewController: UIViewController, HomeDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        doSomething()
+        gradient()
+        showUserData()
+        showExtratos()
     }
     
     // MARK: Do something
@@ -77,37 +80,61 @@ class HomeViewController: UIViewController, HomeDisplayLogic
     @IBOutlet weak var nomeTextField: UILabel!
     @IBOutlet weak var saldoTextField: UILabel!
     @IBOutlet weak var cpfTextField: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var gradientView: UIView!
     
-    func doSomething()
+    var listaExtratos:Array<Extratos> = []
+    
+    func showUserData()
     {
         let request = Home.UserData.Request()
-        interactor?.doSomething(request: request)
+        interactor?.showUserData(request: request)
     }
     
-    func displaySomething(viewModel: Home.UserData.ViewModel)
+    func showExtratos()
+    {
+        let request = Home.ExtratosData.Request()
+        interactor?.showExtratos(request: request)
+    }
+    
+    func displayUserData(viewModel: Home.UserData.ViewModel)
     {
         nomeTextField.text = viewModel.user.nome
         saldoTextField.text = String(viewModel.user.saldo)
         cpfTextField.text = viewModel.user.cpf
     }
     
+    func displayExtratos(viewModel: Home.ExtratosData.ViewModel) {
+        listaExtratos = viewModel.extrato
+        tableView.reloadData()
+    }
+    
     //MARK: - Tableview
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return listaExtratos.count
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "celulaExtrato", for: indexPath) as! ExtratoViewCell
-//        cell.descricaoLabel.text = listaExtratos[indexPath.row].descricao
-//        cell.dataLabel.text = formatter.formataData(listaExtratos[indexPath.row].data)
-//        cell.valorLabel.text = formatter.formataValor(listaExtratos[indexPath.row].valor)
-//        if listaExtratos[indexPath.row].valor < 0 {
-//            cell.tipoLabel.text = "Pagamento"
-//            cell.valorLabel.textColor = UIColor.red
-//        } else {
-//            cell.tipoLabel.text = "Recebimento"
-//            cell.valorLabel.textColor = UIColor(red: 17.0/255.0, green: 200.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-//        }
-//        return cell
-//    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listaExtratos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celulaExtrato", for: indexPath) as! ExtratoViewCell
+        cell.descricaoLabel.text = listaExtratos[indexPath.row].descricao
+        cell.dataLabel.text = listaExtratos[indexPath.row].data
+        cell.valorLabel.text = String(listaExtratos[indexPath.row].valor)
+        if listaExtratos[indexPath.row].valor < 0 {
+            cell.tipoLabel.text = "Pagamento"
+            cell.valorLabel.textColor = UIColor.red
+        } else {
+            cell.tipoLabel.text = "Recebimento"
+            cell.valorLabel.textColor = UIColor(red: 17.0/255.0, green: 200.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        }
+        return cell
+    }
+    //MARK: - Gradient
+    func gradient() {
+        let gradientColor = CAGradientLayer()
+        gradientColor.colors = [UIColor(red: 176.0/255.0, green: 226.0/255.0, blue: 255.0/255.0, alpha: 1.0).cgColor,UIColor(red: 28.0/255.0, green: 120.0/255.0, blue: 212.0/255.0, alpha: 1.0).cgColor]
+        gradientColor.frame = gradientView.bounds
+        gradientColor.startPoint = CGPoint(x: 0, y: 1)
+        gradientColor.endPoint = CGPoint(x: 1, y: 1)
+        gradientView.layer.insertSublayer(gradientColor, at: 0)
+    }
 }

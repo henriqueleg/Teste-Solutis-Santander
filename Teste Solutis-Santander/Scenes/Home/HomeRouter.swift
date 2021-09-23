@@ -55,6 +55,7 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
     
     func passDataToSomewhere(source: HomeDataStore, destination: inout LoginDataStore)
     {
-        //destination.name = source.name
+        destination.user = source.user
+        
     }
 }
