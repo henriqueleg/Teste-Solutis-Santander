@@ -21,6 +21,9 @@ class API: NSObject {
             switch response.result {
             case .success:
                 if let resposta = response.result.value as? Dictionary<String,Any> {
+                    
+                    //response.response?.statusCode
+                    
                     let userInfo = resposta
                     guard let nome = userInfo["nome"] as? String else {completion(user)
                         return }

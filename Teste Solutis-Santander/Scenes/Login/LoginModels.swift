@@ -10,22 +10,42 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Foundation
 
-enum Vip
+class LoginModels
 {
   // MARK: Use cases
   
-  enum Something
+  enum Login
   {
     struct Request
     {
+        var username: String
+        var password: String
     }
     struct Response
     {
+        var user: User
     }
     struct ViewModel
     {
+        var user: User
     }
   }
+    
+    enum SavedUsername {
+        struct Request {
+            
+        }
+        
+        struct Response {
+            var username: String
+        }
+        
+        struct ViewModel {
+            var username: String
+        }
+        
+    }
 }
+ 

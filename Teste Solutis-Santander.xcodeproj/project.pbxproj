@@ -22,6 +22,18 @@
 		BA935A6226E6A63900B1E904 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A6126E6A63900B1E904 /* User.swift */; };
 		BA935A6726E8316E00B1E904 /* ExtratosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA935A6626E8316E00B1E904 /* ExtratosController.swift */; };
 		BAD3311E26EBCFD700E006BB /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3311D26EBCFD700E006BB /* Formatter.swift */; };
+		BAD3312626F3C0A900E006BB /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3312026F3C0A900E006BB /* LoginPresenter.swift */; };
+		BAD3312726F3C0A900E006BB /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3312126F3C0A900E006BB /* LoginWorker.swift */; };
+		BAD3312826F3C0A900E006BB /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3312226F3C0A900E006BB /* LoginRouter.swift */; };
+		BAD3312926F3C0A900E006BB /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3312326F3C0A900E006BB /* LoginModels.swift */; };
+		BAD3312A26F3C0A900E006BB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3312426F3C0A900E006BB /* LoginViewController.swift */; };
+		BAD3312B26F3C0A900E006BB /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3312526F3C0A900E006BB /* LoginInteractor.swift */; };
+		BADE0E4B26FCF9F50085C729 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE0E4526FCF9F50085C729 /* HomePresenter.swift */; };
+		BADE0E4C26FCF9F50085C729 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE0E4626FCF9F50085C729 /* HomeWorker.swift */; };
+		BADE0E4D26FCF9F50085C729 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE0E4726FCF9F50085C729 /* HomeRouter.swift */; };
+		BADE0E4E26FCF9F50085C729 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE0E4826FCF9F50085C729 /* HomeModels.swift */; };
+		BADE0E4F26FCF9F50085C729 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE0E4926FCF9F50085C729 /* HomeViewController.swift */; };
+		BADE0E5026FCF9F50085C729 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE0E4A26FCF9F50085C729 /* HomeInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +54,18 @@
 		BA935A6126E6A63900B1E904 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BA935A6626E8316E00B1E904 /* ExtratosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtratosController.swift; sourceTree = "<group>"; };
 		BAD3311D26EBCFD700E006BB /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		BAD3312026F3C0A900E006BB /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		BAD3312126F3C0A900E006BB /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
+		BAD3312226F3C0A900E006BB /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		BAD3312326F3C0A900E006BB /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
+		BAD3312426F3C0A900E006BB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BAD3312526F3C0A900E006BB /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		BADE0E4526FCF9F50085C729 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		BADE0E4626FCF9F50085C729 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		BADE0E4726FCF9F50085C729 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		BADE0E4826FCF9F50085C729 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		BADE0E4926FCF9F50085C729 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BADE0E4A26FCF9F50085C729 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		D39EB25E910DD9FA2BD1F133 /* Pods-Teste Solutis-Santander.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste Solutis-Santander.debug.xcconfig"; path = "Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander.debug.xcconfig"; sourceTree = "<group>"; };
 		E5D9A72E350C5984211333B7 /* Pods-Teste Solutis-Santander.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste Solutis-Santander.release.xcconfig"; path = "Target Support Files/Pods-Teste Solutis-Santander/Pods-Teste Solutis-Santander.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +129,7 @@
 		BA935A4526E685ED00B1E904 /* Teste Solutis-Santander */ = {
 			isa = PBXGroup;
 			children = (
+				BADE0E4326FCF9C00085C729 /* Scenes */,
 				BA73CF5B26E94BB500B00120 /* Utils */,
 				BA935A6326E6C82800B1E904 /* Servicos */,
 				BA935A5A26E6861400B1E904 /* Model */,
@@ -153,6 +178,41 @@
 				BA935A5F26E6926800B1E904 /* API.swift */,
 			);
 			path = Servicos;
+			sourceTree = "<group>";
+		};
+		BAD3311F26F3C07800E006BB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BAD3312426F3C0A900E006BB /* LoginViewController.swift */,
+				BAD3312526F3C0A900E006BB /* LoginInteractor.swift */,
+				BAD3312026F3C0A900E006BB /* LoginPresenter.swift */,
+				BAD3312126F3C0A900E006BB /* LoginWorker.swift */,
+				BAD3312326F3C0A900E006BB /* LoginModels.swift */,
+				BAD3312226F3C0A900E006BB /* LoginRouter.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BADE0E4326FCF9C00085C729 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BADE0E4426FCF9D20085C729 /* Home */,
+				BAD3311F26F3C07800E006BB /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		BADE0E4426FCF9D20085C729 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BADE0E4526FCF9F50085C729 /* HomePresenter.swift */,
+				BADE0E4626FCF9F50085C729 /* HomeWorker.swift */,
+				BADE0E4726FCF9F50085C729 /* HomeRouter.swift */,
+				BADE0E4826FCF9F50085C729 /* HomeModels.swift */,
+				BADE0E4926FCF9F50085C729 /* HomeViewController.swift */,
+				BADE0E4A26FCF9F50085C729 /* HomeInteractor.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,17 +329,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD3312A26F3C0A900E006BB /* LoginViewController.swift in Sources */,
 				BAD3311E26EBCFD700E006BB /* Formatter.swift in Sources */,
 				BA935A4B26E685ED00B1E904 /* ViewController.swift in Sources */,
+				BAD3312826F3C0A900E006BB /* LoginRouter.swift in Sources */,
 				BA935A4726E685ED00B1E904 /* AppDelegate.swift in Sources */,
 				BA73CF5626E8E94900B00120 /* ExtratoViewCell.swift in Sources */,
+				BAD3312726F3C0A900E006BB /* LoginWorker.swift in Sources */,
+				BADE0E4F26FCF9F50085C729 /* HomeViewController.swift in Sources */,
+				BAD3312926F3C0A900E006BB /* LoginModels.swift in Sources */,
 				BA73CF5A26E9391600B00120 /* CardView.swift in Sources */,
+				BADE0E4D26FCF9F50085C729 /* HomeRouter.swift in Sources */,
+				BAD3312B26F3C0A900E006BB /* LoginInteractor.swift in Sources */,
 				BA73CF5D26E94BD100B00120 /* Validations.swift in Sources */,
 				BA73CF5826E8FBEE00B00120 /* Extratos.swift in Sources */,
+				BADE0E4E26FCF9F50085C729 /* HomeModels.swift in Sources */,
 				BA935A6226E6A63900B1E904 /* User.swift in Sources */,
+				BAD3312626F3C0A900E006BB /* LoginPresenter.swift in Sources */,
 				BA935A6726E8316E00B1E904 /* ExtratosController.swift in Sources */,
+				BADE0E4B26FCF9F50085C729 /* HomePresenter.swift in Sources */,
 				BA935A4926E685ED00B1E904 /* SceneDelegate.swift in Sources */,
+				BADE0E5026FCF9F50085C729 /* HomeInteractor.swift in Sources */,
 				BA935A6026E6926800B1E904 /* API.swift in Sources */,
+				BADE0E4C26FCF9F50085C729 /* HomeWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
