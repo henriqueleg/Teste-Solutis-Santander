@@ -82,6 +82,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDataSou
     @IBOutlet weak var cpfTextField: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gradientView: UIView!
+    
+    
     @IBAction func logoutButton(_ sender: UIButton) {
         showAlert()
     }

@@ -22,6 +22,7 @@ class LoginModels
     {
         var username: String
         var password: String
+        var checked: Bool
     }
     struct Response
     {

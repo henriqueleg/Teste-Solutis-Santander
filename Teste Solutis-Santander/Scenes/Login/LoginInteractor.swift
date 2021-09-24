@@ -11,10 +11,13 @@
 //
 
 import UIKit
+import KeychainSwift
 
 protocol LoginBusinessLogic
 {
     func doLogin(request: LoginModels.Login.Request)
+    func clearKeychain()
+    func getKeychain()
 }
 
 protocol LoginDataStore
@@ -32,7 +35,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
     
     func doLogin(request: LoginModels.Login.Request)
     {
-        worker.doLogin(username: request.username, password: request.password, completion: { user in
+        worker.doLogin(username: request.username, password: request.password, checked: request.checked, completion: { user in
             if let result = user {
                 let response = LoginModels.Login.Response(user: result)
                 self.user = result
@@ -41,6 +44,14 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
                 self.presenter?.presentError()
             }
         })
+    }
+    
+    func clearKeychain() {
+        worker.clearKeychain()
+    }
+    
+    func getKeychain() {
+        presenter?.presentUser(username: worker.getKeychain())
     }
 }
 

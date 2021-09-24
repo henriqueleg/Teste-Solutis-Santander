@@ -12,12 +12,13 @@
 
 import UIKit
 import SVProgressHUD
+import KeychainSwift
 
 class LoginWorker
 {
     private let api = API()
     let validator = Validation()
-    func doLogin(username: String, password: String, completion: @escaping (_ usuario:User?) -> Void) {
+    func doLogin(username: String, password: String, checked: Bool, completion: @escaping (_ usuario:User?) -> Void) {
         SVProgressHUD.show()
         if validator.validaTudo(username, password) {
             api.login(username, password) { (user) in
@@ -25,19 +26,35 @@ class LoginWorker
                     SVProgressHUD.dismiss()
                     completion(nil)
                     return
-                    }
+                }
                 else if self.api.succeeded == true {
+                    if checked == true {
+                        let keychain = KeychainSwift()
+                        keychain.set(username, forKey: "username")
+                    } else {
+                        self.clearKeychain()
+                    }
                     SVProgressHUD.dismiss()
                     completion(user!)
-                    }
                 }
             }
-            else {
-                completion(nil)
-                SVProgressHUD.dismiss()
-                return
-            }
+        }
+        else {
+            completion(nil)
+            SVProgressHUD.dismiss()
+            return
         }
     }
+    
+    func getKeychain() -> String {
+        let keychain = KeychainSwift()
+        return keychain.get("username") ?? ""
+    }
+    
+    func clearKeychain() {
+        let keychain = KeychainSwift()
+        keychain.delete("username")
+    }
+}
 
- 
+

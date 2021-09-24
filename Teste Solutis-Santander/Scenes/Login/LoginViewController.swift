@@ -16,6 +16,7 @@ protocol LoginDisplayLogic: AnyObject
 {
     func displayHome(viewModel: LoginModels.Login.ViewModel)
     func displayError()
+    func displayUser(username:String)
 }
 
 class LoginViewController: UIViewController, LoginDisplayLogic
@@ -25,6 +26,8 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var loginButtonOutlet: UIButton!
+    @IBOutlet weak var saveUser: UISwitch!
+    
     
     var interactor: LoginBusinessLogic?
     var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
@@ -84,7 +87,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
                                  for : .editingChanged)
         passwordTextField.addTarget(self, action:#selector(hideErrorLabel),
                                     for : .editingChanged)
-        
+        interactor?.getKeychain()
     }
     
     // MARK: Do something
@@ -93,8 +96,13 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     {
         let username = usernameTextField.text!
         let password = passwordTextField.text!
-        let request = LoginModels.Login.Request(username: username, password: password)
+        let saveUser = saveUser.isOn
+        let request = LoginModels.Login.Request(username: username, password: password, checked: saveUser)
         interactor?.doLogin(request: request)
+    }
+    
+    @IBAction func switchSaveUser(_ sender: UISwitch) {
+        deleteKeychain()
     }
     
     
@@ -111,6 +119,14 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     
     @objc func hideErrorLabel() {
         errorLabel.isHidden = true
+    }
+    
+    func deleteKeychain() {
+            interactor?.clearKeychain()
+    }
+    
+    func displayUser(username: String) {
+        usernameTextField.text = username
     }
 }
 

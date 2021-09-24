@@ -16,6 +16,7 @@ protocol LoginPresentationLogic
 {
     func presentHome(response: LoginModels.Login.Response)
     func presentError()
+    func presentUser(username:String)
 }
 
 class LoginPresenter: LoginPresentationLogic
@@ -32,6 +33,10 @@ class LoginPresenter: LoginPresentationLogic
     
     func presentError() {
         viewController?.displayError()
+    }
+    
+    func presentUser(username:String) {
+        viewController?.displayUser(username: username)
     }
 }
 
