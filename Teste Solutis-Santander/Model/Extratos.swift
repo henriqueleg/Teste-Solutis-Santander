@@ -7,10 +7,19 @@
 
 import UIKit
 
-class Extratos: Decodable {
+struct Extratos: Decodable {
 
     let valor:Double
     let descricao:String
     let data:String
+    
+    var formatedValor: String {
+        return Formatter().formataValor(valor)
+    }
+    
+    var formatedData: String {
+        return Formatter().formataData(data)
+    }
+    
     
 }

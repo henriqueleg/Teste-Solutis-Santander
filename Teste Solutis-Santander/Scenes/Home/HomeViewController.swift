@@ -82,6 +82,9 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDataSou
     @IBOutlet weak var cpfTextField: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gradientView: UIView!
+    @IBAction func logoutButton(_ sender: UIButton) {
+        showAlert()
+    }
     
     var listaExtratos:Array<Extratos> = []
     
@@ -100,8 +103,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDataSou
     func displayUserData(viewModel: Home.UserData.ViewModel)
     {
         nomeTextField.text = viewModel.user.nome
-        saldoTextField.text = String(viewModel.user.saldo)
-        cpfTextField.text = viewModel.user.cpf
+        saldoTextField.text = String(viewModel.user.formatedSaldo)
+        cpfTextField.text = viewModel.user.formatedCpf
     }
     
     func displayExtratos(viewModel: Home.ExtratosData.ViewModel) {
@@ -117,8 +120,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celulaExtrato", for: indexPath) as! ExtratoViewCell
         cell.descricaoLabel.text = listaExtratos[indexPath.row].descricao
-        cell.dataLabel.text = listaExtratos[indexPath.row].data
-        cell.valorLabel.text = String(listaExtratos[indexPath.row].valor)
+        cell.dataLabel.text = listaExtratos[indexPath.row].formatedData
+        cell.valorLabel.text = listaExtratos[indexPath.row].formatedValor
         if listaExtratos[indexPath.row].valor < 0 {
             cell.tipoLabel.text = "Pagamento"
             cell.valorLabel.textColor = UIColor.red
@@ -136,5 +139,17 @@ class HomeViewController: UIViewController, HomeDisplayLogic, UITableViewDataSou
         gradientColor.startPoint = CGPoint(x: 0, y: 1)
         gradientColor.endPoint = CGPoint(x: 1, y: 1)
         gradientView.layer.insertSublayer(gradientColor, at: 0)
+    }
+    //MARK: - Alert
+    func showAlert() {
+        let logoutAlert = UIAlertController(title: "Sair", message: "Deseja mesmo sair?", preferredStyle: UIAlertController.Style.alert)
+        logoutAlert.addAction(UIAlertAction(title: "Sair", style: .default, handler: { (action:UIAlertAction!) in
+            self.performSegue(withIdentifier: "logout", sender: self)
+        }))
+        logoutAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action:UIAlertAction!) in
+            logoutAlert.dismiss(animated: true, completion: nil)
+        }))
+        
+        present(logoutAlert, animated: true, completion: nil)
     }
 }

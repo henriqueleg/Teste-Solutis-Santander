@@ -15,21 +15,27 @@ class API: NSObject {
     var succeeded = false
 
     // MARK: - POST
-    func login(_ username:String,_ password:String, completion: @escaping (_ usuario:User) -> Void)  {
+    func login(_ username:String,_ password:String, completion: @escaping (_ usuario:User?) -> Void)  {
         var user = User(nome: "", saldo: 0, cpf: "", token: "")
         Alamofire.request("https://api.mobile.test.solutis.xyz/login", method: .post, parameters: ["username":username,"password":password],encoding: JSONEncoding()).responseJSON { (response) in
             switch response.result {
             case .success:
                 if let resposta = response.result.value as? Dictionary<String,Any> {
                     
-                    //response.response?.statusCode
+                    if response.response!.statusCode > 299 {
+                        completion(nil)
+                        return
+                    }
                     
                     let userInfo = resposta
-                    guard let nome = userInfo["nome"] as? String else {completion(user)
-                        return }
-                    guard let cpf = userInfo["cpf"] as? String else {return}
-                    guard let saldo = userInfo["saldo"] as? Double else {return}
-                    guard let token = userInfo["token"] as? String else {return}
+                    guard let nome = userInfo["nome"] as? String,
+                          let cpf = userInfo["cpf"] as? String,
+                          let saldo = userInfo["saldo"] as? Double,
+                          let token = userInfo["token"] as? String
+                    else {
+                        completion(nil)
+                        return
+                    }
                     user = User(nome: nome, saldo: saldo, cpf: cpf, token: token)
                     self.user = user
                     self.succeeded = true

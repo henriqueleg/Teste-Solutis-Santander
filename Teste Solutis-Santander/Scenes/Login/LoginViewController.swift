@@ -14,11 +14,18 @@ import UIKit
 
 protocol LoginDisplayLogic: AnyObject
 {
-    func displaySomething(viewModel: LoginModels.Login.ViewModel)
+    func displayHome(viewModel: LoginModels.Login.ViewModel)
+    func displayError()
 }
 
 class LoginViewController: UIViewController, LoginDisplayLogic
 {
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var loginButtonOutlet: UIButton!
+    
     var interactor: LoginBusinessLogic?
     var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
     
@@ -64,6 +71,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         }
     }
     @IBAction func loginButton(_ sender: UIButton) {
+        loginButtonOutlet.isEnabled = false
         doLogin()
     }
     
@@ -72,21 +80,37 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        usernameTextField.addTarget(self, action:#selector(hideErrorLabel),
+                                 for : .editingChanged)
+        passwordTextField.addTarget(self, action:#selector(hideErrorLabel),
+                                    for : .editingChanged)
+        
     }
     
     // MARK: Do something
     
-    //@IBOutlet weak var nameTextField: UITextField!
-    
     func doLogin()
     {
-        let request = LoginModels.Login.Request(username: "teste@teste.com.br", password: "abc123@")
+        let username = usernameTextField.text!
+        let password = passwordTextField.text!
+        let request = LoginModels.Login.Request(username: username, password: password)
         interactor?.doLogin(request: request)
     }
     
-    func displaySomething(viewModel: LoginModels.Login.ViewModel)
+    
+    
+    func displayHome(viewModel: LoginModels.Login.ViewModel)
     {
         router?.routeToHome(segue: nil)
+    }
+    
+    func displayError() {
+        errorLabel.isHidden = false
+        loginButtonOutlet.isEnabled = true
+    }
+    
+    @objc func hideErrorLabel() {
+        errorLabel.isHidden = true
     }
 }
 

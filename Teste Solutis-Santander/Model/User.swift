@@ -7,16 +7,16 @@
 
 import UIKit
 
-class User: NSObject {
+struct User {
     var nome:String
     var saldo:Double
     var cpf:String
     var token:String
     
-    init(nome:String, saldo:Double,cpf:String,token:String) {
-        self.nome = nome
-        self.saldo = saldo
-        self.cpf = cpf
-        self.token = token
+    var formatedSaldo: String {
+        return Formatter().formataValor(saldo)
+    }
+    var formatedCpf: String {
+        return Formatter().formataCPF(cpf)
     }
 }

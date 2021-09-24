@@ -14,7 +14,8 @@ import UIKit
 
 protocol LoginPresentationLogic
 {
-    func presentSomething(response: LoginModels.Login.Response)
+    func presentHome(response: LoginModels.Login.Response)
+    func presentError()
 }
 
 class LoginPresenter: LoginPresentationLogic
@@ -23,10 +24,14 @@ class LoginPresenter: LoginPresentationLogic
     
     // MARK: Do something
     
-    func presentSomething(response: LoginModels.Login.Response)
+    func presentHome(response: LoginModels.Login.Response)
     {
         let viewModel = LoginModels.Login.ViewModel(user: response.user)
-        viewController?.displaySomething(viewModel: viewModel)
+        viewController?.displayHome(viewModel: viewModel)
+    }
+    
+    func presentError() {
+        viewController?.displayError()
     }
 }
 

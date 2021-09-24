@@ -11,16 +11,33 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class LoginWorker
 {
     private let api = API()
-    
-    func doLogin(username: String, password: String, completion: @escaping (_ usuario:User) -> Void) {
-        api.login(username, password) { user in
-            completion(user)
+    let validator = Validation()
+    func doLogin(username: String, password: String, completion: @escaping (_ usuario:User?) -> Void) {
+        SVProgressHUD.show()
+        if validator.validaTudo(username, password) {
+            api.login(username, password) { (user) in
+                if (self.api.succeeded == false) {
+                    SVProgressHUD.dismiss()
+                    completion(nil)
+                    return
+                    }
+                else if self.api.succeeded == true {
+                    SVProgressHUD.dismiss()
+                    completion(user!)
+                    }
+                }
+            }
+            else {
+                completion(nil)
+                SVProgressHUD.dismiss()
+                return
+            }
         }
-        return
     }
-}
+
  

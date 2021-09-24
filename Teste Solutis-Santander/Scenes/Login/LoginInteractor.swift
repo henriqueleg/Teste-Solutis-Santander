@@ -24,19 +24,22 @@ protocol LoginDataStore
 
 class LoginInteractor: LoginBusinessLogic, LoginDataStore
 {
-  var presenter: LoginPresentationLogic?
-  var worker = LoginWorker()
-  var user: User?
-  
-  // MARK: Do something
-  
+    var presenter: LoginPresentationLogic?
+    var worker = LoginWorker()
+    var user: User?
+    
+    // MARK: Do something
+    
     func doLogin(request: LoginModels.Login.Request)
     {
-    worker.doLogin(username: request.username, password: request.password, completion: { result in
-        
-        let response = LoginModels.Login.Response(user: result)
-        self.user = result
-        self.presenter?.presentSomething(response: response)
+        worker.doLogin(username: request.username, password: request.password, completion: { user in
+            if let result = user {
+                let response = LoginModels.Login.Response(user: result)
+                self.user = result
+                self.presenter?.presentHome(response: response)
+            } else {
+                self.presenter?.presentError()
+            }
         })
     }
 }
